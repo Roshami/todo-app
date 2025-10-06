@@ -47,16 +47,40 @@ The entire application runs in Docker containers. No local installation of Node.
 # Steps
   **1. Clone this repository**
   ```brash
-git clone https://github.com/your-username/todo-app.git
-cd todo-app
+  git clone https://github.com/your-username/todo-app.git
+  cd todo-app
+  ```
+
+  **2. Start all services**
+  ```brash
+  docker-compose up --build
+  ```
+
+  **3. Open the app in your browser**
+  - Frontend: http://localhost:3000
+  - (Backend API runs internally on port 8080)
+
+  **4. Use the app**
+  - Add tasks with title & description
+  - Only the 5 most recent uncompleted tasks are shown
+  - Click “Done” to hide a task
+
+  **5. Stop the app**
+   Press `Ctrl + C` in the terminal, or run:
+```brash
+docker-compose down
+```
+    
+## 🧪 Testing
+
+**Backend Tests**
+```brash
+cd backend
+npm test
 ```
 
-## Features
-- Create tasks with title & description
-- Shows only 5 most recent uncompleted tasks
-- “Done” button hides completed tasks
-
-## Tech Stack
-- Frontend: React
-- Backend: Node.js + Express
-- Database: MySQL
+**Frontend Tests**
+```brash
+cd frontend
+npm test
+```
